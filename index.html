@@ -40,7 +40,6 @@
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
     <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
-    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></symbol>
     <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
     <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5M22 10v6"/></symbol>
@@ -94,7 +93,6 @@
       <a href="#skills">ทักษะ</a>
       <a href="#grades">ผลการเรียน</a>
       <a href="#vision">เป้าหมาย</a>
-      <a href="#video">วิดีโอ</a>
     </nav>
 
     <div class="nav__actions">
@@ -133,7 +131,7 @@
           </p>
           <div class="hero__cta reveal" style="--d:.42s">
             <a href="#projects" class="btn btn--primary magnetic">ดูผลงานของผม <svg class="ic ic--arrow"><use href="#i-arrow"/></svg></a>
-            <a href="#video" class="btn btn--ghost magnetic"><svg class="ic ic--fill"><use href="#i-play"/></svg> วิดีโอแนะนำตัว</a>
+            <a href="#playground" class="btn btn--ghost magnetic"><svg class="ic"><use href="#i-terminal"/></svg> ลองเล่น Terminal</a>
           </div>
           <dl class="hero__stats reveal" style="--d:.5s">
             <div><dt><span class="counter" data-to="3.66" data-decimals="2">0.00</span></dt><dd>GPAX (4 ภาคเรียน)</dd></div>
@@ -672,28 +670,6 @@
       </div>
     </section>
 
-    <!-- ===== 08 VIDEO ===== -->
-    <section class="section" id="video">
-      <div class="container">
-        <header class="section__head reveal">
-          <span class="eyebrow" data-scramble>08 — Video</span>
-          <h2 class="section__title">วิดีโอ<span class="grad-text">แนะนำตัว</span></h2>
-          <p class="section__sub">ความยาว 2 นาที 23 วินาที</p>
-        </header>
-
-        <div class="card video reveal">
-          <video id="introVideo" preload="metadata" playsinline>
-            <source src="assets/video/intro.mp4#t=1" type="video/mp4">
-          </video>
-          <div class="video__overlay" id="videoOverlay">
-            <button type="button" class="video__play" id="videoPlay" aria-label="เล่นวิดีโอแนะนำตัว">
-              <svg class="ic ic--fill"><use href="#i-play"/></svg>
-            </button>
-            <p class="video__title">วิธวินท์ แก้วโหมดตาด<small>TCAS 2570 · ICT Mahidol</small></p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- ===== Footer ===== -->

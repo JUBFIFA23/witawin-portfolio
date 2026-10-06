@@ -828,13 +828,6 @@
           `${span('t-gold', 'ธุรกิจดิจิทัล + การเขียนโปรแกรม = ซอฟต์แวร์เพื่อสังคมไทย')}`,
         ],
       },
-      video: {
-        desc: 'ไปดูวิดีโอแนะนำตัว',
-        run: () => {
-          setTimeout(() => $('#video').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }), 400);
-          return ['กำลังพาไปที่วิดีโอ… ▶'];
-        },
-      },
       theme: {
         desc: 'สลับธีมสว่าง/มืด',
         run: () => [`theme → ${span('t-gold', toggleTheme(input))}`],
@@ -842,7 +835,7 @@
       ls: {
         desc: 'ดูรายการไฟล์',
         run: () => [
-          `${Object.keys(FILES).map((f) => span('t-white', f)).join('  ')}  ${span('t-cyan', 'projects/')}  ${span('t-red', 'intro.mp4')}`,
+          `${Object.keys(FILES).map((f) => span('t-white', f)).join('  ')}  ${span('t-cyan', 'projects/')}`,
         ],
       },
       cat: {
@@ -852,7 +845,6 @@
           if (!file) return [span('t-red', 'cat: ต้องระบุชื่อไฟล์ เช่น cat about.txt')];
           if (FILES[file]) return commands[FILES[file]].run([]);
           if (file.replace(/\/$/, '') === 'projects') return [span('t-red', `cat: ${escapeHTML(file)}: Is a directory`), 'ลองพิมพ์ projects แทนครับ'];
-          if (file === 'intro.mp4') return ['นี่คือไฟล์วิดีโอ ลองพิมพ์ ' + span('t-cyan', 'video')];
           return [span('t-red', `cat: ${escapeHTML(file)}: No such file`)];
         },
       },
@@ -1023,30 +1015,6 @@
     });
   }
 
-  /* ---------- Video ---------- */
-  function initVideo() {
-    const video = $('#introVideo');
-    const overlay = $('#videoOverlay');
-    const play = $('#videoPlay');
-    if (!video || !play) return;
-
-    play.addEventListener('click', () => {
-      overlay.classList.add('is-hidden');
-      video.controls = true;
-      const p = video.play();
-      if (p && p.catch) p.catch(() => {});
-    });
-
-    const source = $('source', video);
-    const showError = () => {
-      if ($('.video__error', overlay)) return;
-      overlay.classList.remove('is-hidden');
-      overlay.insertAdjacentHTML('beforeend', '<p class="video__error">ไม่พบไฟล์วิดีโอ (assets/video/intro.mp4)</p>');
-    };
-    if (source) source.addEventListener('error', showError);
-    video.addEventListener('error', showError);
-  }
-
   /* ---------- Konami code + Confetti ---------- */
   let confettiRunning = false;
   function confetti() {
@@ -1149,7 +1117,6 @@
   initSkills();
   initGrades();
   initQuote();
-  initVideo();
   initKonami();
 
   const year = $('#year');
