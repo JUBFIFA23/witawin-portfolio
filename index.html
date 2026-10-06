@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="th" class="no-js" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Witawin Kaewmodtad · Portfolio — ICT Mahidol TCAS 2570</title>
+  <meta name="description" content="พอร์ตโฟลิโอของวิธวินท์ แก้วโหมดตาด ผู้สมัครหลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการและเทคโนโลยีดิจิทัล คณะ ICT มหาวิทยาลัยมหิดล (TCAS 2570)">
+  <meta name="theme-color" content="#060a17">
+  <link rel="icon" type="image/png" href="assets/img/mu-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Kanit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // ตั้งค่าธีมก่อนหน้าเว็บแสดงผล (กันจอกระพริบ)
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js');
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+      } catch (e) {}
+      // กันเหนียว: ถ้า main.js โหลดไม่ขึ้น ให้หน้าเว็บยังเลื่อนดูได้
+      setTimeout(function () {
+        document.body && document.body.classList.remove('is-loading');
+        var p = document.getElementById('preloader');
+        if (p) p.classList.add('is-done');
+      }, 6000);
+    })();
+  </script>
+</head>
+<body class="is-loading">
+
+  <!-- ===== SVG icon sprite ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5M22 10v6"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12M7.5 4.27l9 5.15"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"/></symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></symbol>
+  </svg>
+
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__term">
+      <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><em>witawin@mu-ict: ~</em></div>
+      <pre class="preloader__out" id="preloaderOut"></pre>
+      <div class="preloader__progress"><i id="preloaderBar"></i></div>
+      <p class="preloader__skip">คลิกเพื่อข้าม</p>
+    </div>
+  </div>
+
+  <!-- ===== Global FX layers ===== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <canvas class="bg-canvas" id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo" aria-label="กลับไปด้านบน">
+      <img src="assets/img/mu-logo.png" alt="" width="34" height="34">
+      <span>witawin<b>.dev</b><i class="caret"></i></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="เมนูหลัก">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="#about">เกี่ยวกับ</a>
+      <a href="#journey">เส้นทาง</a>
+      <a href="#projects">ผลงาน</a>
+      <a href="#skills">ทักษะ</a>
+      <a href="#grades">ผลการเรียน</a>
+      <a href="#vision">เป้าหมาย</a>
+      <a href="#video">วิดีโอ</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="#playground" class="nav__term" aria-label="ไปที่ Terminal">
+        <svg class="ic"><use href="#i-terminal"/></svg><span>Terminal</span>
+      </a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="สลับธีมสว่าง/มืด">
+        <svg class="ic ic--sun"><use href="#i-sun"/></svg>
+        <svg class="ic ic--moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn nav__burger" id="burger" type="button" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="pill reveal" style="--d:0s"><i class="pulse"></i>TCAS 2570 · ICT Mahidol University</span>
+          <p class="hero__hello reveal" style="--d:.08s">สวัสดีครับ ผมชื่อ</p>
+          <h1 class="hero__name reveal" style="--d:.16s">
+            <span class="grad-text">วิธวินท์</span> แก้วโหมดตาด
+          </h1>
+          <p class="hero__en reveal" style="--d:.22s">Witawin Kaewmodtad</p>
+          <p class="hero__type reveal" style="--d:.28s">
+            <span class="sr-only">Self-taught Developer, React &amp; Tailwind Builder, C++ Competitor, micro:bit Maker</span>
+            <span aria-hidden="true"><span class="hero__type-prompt">&gt;</span> <span id="typed">Self-taught Developer</span><i class="caret"></i></span>
+          </p>
+          <p class="hero__lead reveal" style="--d:.34s">
+            นักเรียน ปวช. สาขาเทคโนโลยีธุรกิจดิจิทัล ที่เรียนรู้การเขียนโปรแกรมด้วยตัวเอง
+            จาก Scratch ในห้องคอมพิวเตอร์ของโรงเรียน สู่เว็บแอปพลิเคชัน Full-stack
+            และกำลังก้าวต่อไปที่ <strong>สาขาวิทยาการและเทคโนโลยีดิจิทัล คณะ ICT มหาวิทยาลัยมหิดล</strong>
+          </p>
+          <div class="hero__cta reveal" style="--d:.42s">
+            <a href="#projects" class="btn btn--primary magnetic">ดูผลงานของผม <svg class="ic ic--arrow"><use href="#i-arrow"/></svg></a>
+            <a href="#video" class="btn btn--ghost magnetic"><svg class="ic ic--fill"><use href="#i-play"/></svg> วิดีโอแนะนำตัว</a>
+          </div>
+          <dl class="hero__stats reveal" style="--d:.5s">
+            <div><dt><span class="counter" data-to="3.66" data-decimals="2">0.00</span></dt><dd>GPAX (4 ภาคเรียน)</dd></div>
+            <div><dt><span class="counter" data-to="7">0</span></dt><dd>ภาษาและเครื่องมือที่ศึกษาเอง</dd></div>
+            <div><dt><span class="counter" data-to="4.00" data-decimals="2">0.00</span></dt><dd>เกรดภาษาอังกฤษ</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__visual reveal" style="--d:.3s">
+          <div class="avatar" data-tilt="10">
+            <div class="avatar__glow"></div>
+            <div class="avatar__frame">
+              <img src="assets/img/profile.jpg" alt="ภาพถ่ายของวิธวินท์ แก้วโหมดตาด">
+            </div>
+            <span class="chip chip--1"><img data-icon="Py" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="">Python</span>
+            <span class="chip chip--2"><img data-icon="Re" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="">React</span>
+            <span class="chip chip--3"><img src="assets/img/cpp.png" alt="">C++</span>
+            <span class="chip chip--4"><i class="chip__led"></i>micro:bit</span>
+            <div class="avatar__badge">
+              <img src="assets/img/mu-logo.png" alt="">
+              <div><small>Next stop</small><b>ICT · Mahidol</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="เลื่อนลงไปดูต่อ"><span></span></a>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item"><img src="assets/img/scratch.jpg" alt="" class="marquee__photo">Scratch</span>
+        <span class="marquee__item"><img data-icon="Py" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="">Python</span>
+        <span class="marquee__item"><img src="assets/img/microbit.jpg" alt="" class="marquee__photo">micro:bit</span>
+        <span class="marquee__item"><img src="assets/img/cpp.png" alt="">C++</span>
+        <span class="marquee__item"><img data-icon="H" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="">HTML</span>
+        <span class="marquee__item"><img data-icon="C" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="">CSS</span>
+        <span class="marquee__item"><img data-icon="JS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="">JavaScript</span>
+        <span class="marquee__item"><img data-icon="Re" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="">React</span>
+        <span class="marquee__item"><img data-icon="Tw" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="">Tailwind CSS</span>
+        <span class="marquee__item marquee__item--gold"><svg class="ic"><use href="#i-spark"/></svg>Digital Science &amp; Technology</span>
+      </div>
+    </div>
+
+    <!-- ===== 01 ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>01 — About me</span>
+          <h2 class="section__title">จากห้องคอมพิวเตอร์ของโรงเรียน<br><span class="grad-text">สู่การสร้างซอฟต์แวร์ด้วยตัวเอง</span></h2>
+        </header>
+
+        <div class="bento">
+          <article class="card spot bento__story reveal">
+            <span class="card__icon"><svg class="ic"><use href="#i-bulb"/></svg></span>
+            <h3>ความอยากรู้คือจุดเริ่มต้น</h3>
+            <p>
+              ตั้งแต่จำความได้ ผมอยากรู้ว่าเครื่องใช้ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์รอบตัวทำงานอย่างไร
+              แม้ด้วยข้อจำกัดทางครอบครัวทำให้ไม่มีคอมพิวเตอร์ส่วนตัวในวัยเด็ก แต่ห้องคอมพิวเตอร์ของโรงเรียน
+              ก็กลายเป็นพื้นที่แรกที่ผมได้เขียนโปรแกรมด้วย Scratch และหลงใหลในตรรกะของโค้ดตั้งแต่นั้นมา
+            </p>
+            <blockquote class="card__quote">
+              “การได้เห็นคำสั่งที่ตนเองเขียนส่งผลต่อโลกกายภาพจริง
+              คือจุดที่ทำให้ผมมั่นใจว่าอยากเรียนรู้ด้านนี้อย่างจริงจัง”
+            </blockquote>
+          </article>
+
+          <article class="card spot bento__self reveal">
+            <span class="card__icon"><svg class="ic"><use href="#i-book"/></svg></span>
+            <h3>เปลี่ยนช่องว่าง ให้เป็นแรงผลักดัน</h3>
+            <p>เมื่อหลักสูตรเน้นภาพรวมธุรกิจดิจิทัลมากกว่าการเขียนโปรแกรมเชิงลึก ผมจึงศึกษาด้วยตนเองนอกห้องเรียน และลงมือทำจริงอย่างต่อเนื่อง</p>
+            <ul class="langs">
+              <li><img src="assets/img/cpp.png" alt="">C++<svg class="ic ic--check"><use href="#i-check"/></svg></li>
+              <li><img data-icon="Py" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="">Python<svg class="ic ic--check"><use href="#i-check"/></svg></li>
+              <li><img data-icon="H" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="">HTML<svg class="ic ic--check"><use href="#i-check"/></svg></li>
+              <li><img data-icon="C" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="">CSS<svg class="ic ic--check"><use href="#i-check"/></svg></li>
+              <li><img data-icon="JS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="">JavaScript<svg class="ic ic--check"><use href="#i-check"/></svg></li>
+              <li><img data-icon="Re" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="">React<svg class="ic ic--check"><use href="#i-check"/></svg></li>
+              <li><img data-icon="Tw" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="">Tailwind CSS<svg class="ic ic--check"><use href="#i-check"/></svg></li>
+            </ul>
+          </article>
+
+          <article class="card card--dark spot bento__school reveal">
+            <img class="school-logo" src="assets/img/nbac-logo.png" alt="วิทยาลัยเทคโนโลยีนาคประสิทธิ์บริหารธุรกิจ">
+            <span class="card__label"><svg class="ic"><use href="#i-cap"/></svg>กำลังศึกษา</span>
+            <h3>ปวช. สาขาเทคโนโลยีธุรกิจดิจิทัล</h3>
+            <p>วิทยาลัยเทคโนโลยีนาคประสิทธิ์บริหารธุรกิจ (ท.น.ป.)</p>
+            <p class="card__meta"><svg class="ic"><use href="#i-pin"/></svg>อ.สามพราน จ.นครปฐม</p>
+          </article>
+
+          <article class="card spot bento__goal reveal">
+            <img class="goal-logo" src="assets/img/mu-logo.png" alt="ตรามหาวิทยาลัยมหิดล">
+            <span class="card__label card__label--gold"><svg class="ic"><use href="#i-target"/></svg>เป้าหมาย</span>
+            <h3>วท.บ. วิทยาการและเทคโนโลยีดิจิทัล</h3>
+            <p>คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 JOURNEY ===== -->
+    <section class="section" id="journey">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>02 — Journey</span>
+          <h2 class="section__title">ทุกบรรทัดของโค้ด<br><span class="grad-text">คือหนึ่งก้าวของการเดินทาง</span></h2>
+          <p class="section__sub">เลื่อนลงเพื่อดูเส้นทางตั้งแต่โค้ดบรรทัดแรก จนถึงก้าวต่อไปที่ ICT มหิดล</p>
+        </header>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__line" aria-hidden="true"><i></i></div>
+
+          <article class="tl-item reveal">
+            <span class="tl-item__dot" aria-hidden="true"></span>
+            <div class="card spot">
+              <span class="tl-time">จุดเริ่มต้น</span>
+              <h3>Scratch — โค้ดแรกในห้องคอมพิวเตอร์</h3>
+              <p>ที่บ้านไม่มีคอมพิวเตอร์ แต่ที่โรงเรียนมี ห้องคอมพิวเตอร์จึงเป็นที่แรกที่ผมได้ต่อบล็อกคำสั่ง ทำให้ตัวละครขยับได้ และเริ่มหลงใหลในตรรกะของโค้ด</p>
+              <div class="tl-media"><img src="assets/img/scratch.jpg" alt="โลโก้ Scratch" loading="lazy"></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-item__dot" aria-hidden="true"></span>
+            <div class="card spot">
+              <span class="tl-time">มัธยมศึกษาปีที่ 3</span>
+              <h3>Python + micro:bit = ห้องนอนอัจฉริยะ</h3>
+              <p>เขียนภาษา Python เป็นครั้งแรก พร้อมทำโครงงานห้องนอนอัจฉริยะ ใช้บอร์ด micro:bit ควบคุมอุปกรณ์ไฟฟ้าภายในห้อง ครั้งแรกที่ได้เห็นโค้ดของตัวเองทำงานในโลกจริง</p>
+              <div class="tl-media">
+                <img src="assets/img/microbit.jpg" alt="บอร์ด micro:bit" loading="lazy">
+                <img src="assets/img/smart-home.png" alt="บ้านจำลองที่ควบคุมด้วย micro:bit" loading="lazy">
+                <img src="assets/img/servo.jpg" alt="Servo motor" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-item__dot" aria-hidden="true"></span>
+            <div class="card spot">
+              <span class="tl-time">ปวช.</span>
+              <h3>เทคโนโลยีธุรกิจดิจิทัล &amp; การเรียนรู้ด้วยตัวเอง</h3>
+              <p>เลือกเรียนสาขานี้เพราะหวังจะได้เขียนโปรแกรมเชิงลึก แต่เนื้อหาเน้นภาพรวมธุรกิจดิจิทัล ผมจึงเปลี่ยนความผิดหวังเป็นแรงผลักดัน และศึกษาเพิ่มเองนอกห้องเรียน</p>
+              <div class="tags"><span>C++</span><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-item__dot" aria-hidden="true"></span>
+            <div class="card spot">
+              <span class="tl-time">การแข่งขัน</span>
+              <h3>ตัวแทนวิทยาลัย แข่งขันเขียนโปรแกรม C++ ระดับภูมิภาค</h3>
+              <p>ณ วิทยาลัยเทคโนโลยีอีเทค จังหวัดชลบุรี แม้จะไม่ได้รับรางวัล แต่ทำให้เห็นระดับความสามารถของตัวเองตามความเป็นจริง และรู้ว่ายังมีอีกมากที่ต้องพัฒนา</p>
+              <div class="tl-media">
+                <img src="assets/img/etech.jpg" alt="โลโก้วิทยาลัยเทคโนโลยีอีเทค" loading="lazy">
+                <img src="assets/img/cpp.png" alt="โลโก้ภาษา C++" loading="lazy">
+              </div>
+              <span class="lesson"><svg class="ic"><use href="#i-trophy"/></svg>บทเรียนที่ได้ &gt; รางวัล</span>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-item__dot" aria-hidden="true"></span>
+            <div class="card spot">
+              <span class="tl-time">ปัจจุบัน</span>
+              <h3>eFootball Tournament Manager</h3>
+              <p>พัฒนาเว็บแอปพลิเคชันจัดการแข่งขันแบบ Full-stack ด้วย React และ Tailwind CSS เพื่อแก้ปัญหาการบันทึกผลและคำนวณตารางคะแนนด้วยมือ</p>
+              <a href="#projects" class="link-arrow">ลองเล่นเดโม <svg class="ic"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="tl-item tl-item--next reveal">
+            <span class="tl-item__dot" aria-hidden="true"></span>
+            <div class="card spot card--glow">
+              <span class="tl-time">ก้าวต่อไป</span>
+              <div class="next-head">
+                <img src="assets/img/mu-logo.png" alt="ตรามหาวิทยาลัยมหิดล" loading="lazy">
+                <h3>ICT มหาวิทยาลัยมหิดล</h3>
+              </div>
+              <p>วางรากฐานทางทฤษฎีที่ยังขาด ทั้งโครงสร้างข้อมูลและอัลกอริทึม สถาปัตยกรรมซอฟต์แวร์ และการออกแบบระบบฐานข้อมูล</p>
+              <div class="loading-bar"><span>loading future…</span><i></i></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>03 — Projects</span>
+          <h2 class="section__title">ผลงานที่เริ่มจาก<span class="grad-text">ปัญหาจริง</span></h2>
+          <p class="section__sub">ไม่ใช่แค่รูปภาพ ทุกโปรเจกต์ด้านล่างมีเดโมให้ลองกดเล่นได้จริง</p>
+        </header>
+
+        <article class="card featured reveal">
+          <div class="featured__info">
+            <span class="badge badge--live"><i class="pulse"></i>กำลังพัฒนา</span>
+            <h3>eFootball Tournament Manager</h3>
+            <p>
+              ผู้จัดการแข่งขัน eFootball ต้องบันทึกผลและคำนวณตารางคะแนนด้วยมือ ซึ่งเสียเวลาและผิดพลาดบ่อย
+              ผมจึงสร้างเว็บแอปพลิเคชันแบบ Full-stack ที่บันทึกผลและ<strong>จัดอันดับให้อัตโนมัติ</strong>
+            </p>
+            <ul class="checklist">
+              <li><svg class="ic"><use href="#i-check"/></svg>ออกแบบส่วนติดต่อผู้ใช้ (UI) ให้ใช้งานง่าย</li>
+              <li><svg class="ic"><use href="#i-check"/></svg>จัดการโครงสร้างข้อมูลทีม นัดแข่ง และตารางคะแนน</li>
+              <li><svg class="ic"><use href="#i-check"/></svg>แก้ปัญหาทางเทคนิคที่เกิดขึ้นจริงระหว่างพัฒนา</li>
+            </ul>
+            <div class="tags"><span>React</span><span>Tailwind CSS</span><span>Full-stack</span></div>
+            <p class="featured__hint"><svg class="ic"><use href="#i-spark"/></svg>ลองกรอกสกอร์ทางขวา แล้วดูตารางคะแนนสลับอันดับเอง</p>
+          </div>
+
+          <div class="app-window demo" aria-label="เดโมจำลองระบบคำนวณตารางคะแนน">
+            <div class="win-bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <em>efootball-manager — live demo</em>
+            </div>
+            <div class="demo__body">
+              <div class="demo__head">
+                <h4>ผลการแข่งขัน</h4>
+                <span class="demo__status" id="lgStatus" aria-live="polite"></span>
+              </div>
+              <div class="matches" id="lgMatches"></div>
+
+              <div class="demo__head">
+                <h4>ตารางคะแนน</h4>
+                <div class="demo__actions">
+                  <button type="button" class="mini-btn" id="lgRandom"><svg class="ic"><use href="#i-dice"/></svg>สุ่มผล</button>
+                  <button type="button" class="mini-btn" id="lgReset"><svg class="ic"><use href="#i-reset"/></svg>รีเซ็ต</button>
+                </div>
+              </div>
+              <div class="league" role="table" aria-label="ตารางคะแนน">
+                <div class="lg-row lg-row--head" role="row">
+                  <span>#</span><span>ทีม</span><span>P</span><span class="c-w">W</span><span class="c-d">D</span><span class="c-l">L</span><span>GD</span><span>Pts</span>
+                </div>
+                <div class="lg-body" id="lgBody"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="projects-row">
+          <!-- Smart Bedroom -->
+          <article class="card spot project reveal">
+            <div class="project__head">
+              <span class="card__icon"><svg class="ic"><use href="#i-bulb"/></svg></span>
+              <div>
+                <h3>Smart Bedroom · micro:bit</h3>
+                <p class="project__meta">โครงงาน ม.3 · Python</p>
+              </div>
+            </div>
+            <p>ห้องนอนอัจฉริยะที่ใช้บอร์ด micro:bit ควบคุมอุปกรณ์ไฟฟ้าภายในห้อง ลองกดปุ่ม <b>A</b> เพื่อเปิด/ปิดไฟ ปุ่ม <b>B</b> เพื่อหมุนเซอร์โว หรือคลิกที่ LED เพื่อวาดเองได้เลย</p>
+            <div class="project__banner">
+              <img src="assets/img/smart-home.png" alt="บ้านจำลองที่ติดตั้งบอร์ด micro:bit" loading="lazy">
+              <span>micro:bit + Python</span>
+            </div>
+
+            <div class="mb" id="microbit">
+              <div class="mb__board">
+                <button type="button" class="mb__btn" data-btn="A" aria-label="ปุ่ม A เปิดหรือปิดไฟ">A</button>
+                <div class="mb__leds" id="mbLeds" aria-label="จอ LED 5x5 คลิกเพื่อวาด"></div>
+                <button type="button" class="mb__btn" data-btn="B" aria-label="ปุ่ม B หมุนเซอร์โว">B</button>
+              </div>
+              <div class="mb__room">
+                <div class="mb__device">
+                  <span class="mb__lamp"><svg class="ic"><use href="#i-bulb"/></svg></span>
+                  <span>ไฟห้อง</span><b id="mbLampState">ปิด</b>
+                </div>
+                <div class="mb__device">
+                  <span class="mb__servo"><i class="mb__arm"></i></span>
+                  <span>Servo</span><b id="mbServoState">0°</b>
+                </div>
+              </div>
+              <code class="mb__code" id="mbCode">display.show(Image.HEART)</code>
+            </div>
+          </article>
+
+          <!-- C++ Competition -->
+          <article class="card spot project reveal">
+            <div class="project__head">
+              <span class="card__icon"><svg class="ic"><use href="#i-trophy"/></svg></span>
+              <div>
+                <h3>C++ Programming Contest</h3>
+                <p class="project__meta">ตัวแทนวิทยาลัย · ระดับภูมิภาค · E-TECH ชลบุรี</p>
+              </div>
+            </div>
+            <p>การแข่งขันที่ทำให้ผมเห็นระดับความสามารถของตัวเองตามความเป็นจริง ไม่ได้รางวัลกลับมา แต่ได้แรงผลักดันที่ชัดเจนว่าต้องพัฒนาต่อ</p>
+            <pre class="code" aria-label="ตัวอย่างโค้ด C++"><code><span class="tk-p">#include</span> <span class="tk-s">&lt;iostream&gt;</span>
+<span class="tk-k">using namespace</span> std;
+
+<span class="tk-t">int</span> <span class="tk-f">main</span>() {
+    <span class="tk-t">string</span> goal = <span class="tk-s">"ICT Mahidol"</span>;
+    <span class="tk-t">int</span> skill = <span class="tk-n">0</span>;
+
+    <span class="tk-c">// แพ้ได้ แต่ห้ามหยุดเรียนรู้</span>
+    <span class="tk-k">while</span> (skill &lt; <span class="tk-n">100</span>) {
+        <span class="tk-f">practice</span>();
+        skill++;
+    }
+    cout &lt;&lt; <span class="tk-s">"Ready for "</span> &lt;&lt; goal;
+}</code></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 PLAYGROUND (Terminal) ===== -->
+    <section class="section" id="playground">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>04 — Playground</span>
+          <h2 class="section__title">ลองพิมพ์คำสั่ง<br><span class="grad-text">คุยกับผมผ่าน Terminal</span></h2>
+          <p class="section__sub">พิมพ์ <code>help</code> เพื่อดูคำสั่งทั้งหมด กด <kbd>Tab</kbd> เพื่อเติมคำสั่ง <kbd>↑</kbd> <kbd>↓</kbd> เพื่อเรียกคำสั่งเดิม หรือกดปุ่มด้านล่างได้เลย</p>
+        </header>
+
+        <div class="app-window terminal reveal">
+          <div class="win-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <em>witawin@mu-ict: ~ — bash</em>
+          </div>
+          <div class="terminal__body" id="termBody">
+            <div id="termOut" aria-live="polite"></div>
+            <form class="terminal__line" id="termForm" autocomplete="off">
+              <label for="termInput" class="t-prompt-label"><span class="t-user">witawin@mu-ict</span>:<span class="t-path">~</span>$</label>
+              <input id="termInput" type="text" spellcheck="false" autocapitalize="off" aria-label="พิมพ์คำสั่ง">
+            </form>
+          </div>
+          <div class="terminal__chips" id="termChips">
+            <button type="button" data-cmd="help">help</button>
+            <button type="button" data-cmd="whoami">whoami</button>
+            <button type="button" data-cmd="about">about</button>
+            <button type="button" data-cmd="skills">skills</button>
+            <button type="button" data-cmd="projects">projects</button>
+            <button type="button" data-cmd="grades">grades</button>
+            <button type="button" data-cmd="why-mu">why-mu</button>
+            <button type="button" data-cmd="goal">goal</button>
+            <button type="button" data-cmd="sudo admit-me" class="is-gold">sudo admit-me</button>
+            <button type="button" data-cmd="clear">clear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 05 SKILLS ===== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>05 — Skills</span>
+          <h2 class="section__title">เครื่องมือที่ผมใช้<span class="grad-text">สร้างสิ่งต่าง ๆ</span></h2>
+          <p class="section__sub">ทุกทักษะมาพร้อมที่มาจริง ว่าได้ใช้ทำอะไรมาแล้วบ้าง</p>
+        </header>
+
+        <div class="filters reveal" role="tablist" aria-label="กรองทักษะ">
+          <button type="button" class="is-active" data-filter="all" role="tab" aria-selected="true">ทั้งหมด</button>
+          <button type="button" data-filter="lang" role="tab" aria-selected="false">ภาษาโปรแกรม</button>
+          <button type="button" data-filter="web" role="tab" aria-selected="false">เว็บ</button>
+          <button type="button" data-filter="hw" role="tab" aria-selected="false">ฮาร์ดแวร์</button>
+          <button type="button" data-filter="biz" role="tab" aria-selected="false">ธุรกิจดิจิทัล</button>
+        </div>
+
+        <div class="skills" id="skillGrid">
+          <article class="card spot skill reveal" data-cat="lang" data-tilt="6">
+            <span class="skill__logo"><img src="assets/img/cpp.png" alt=""></span>
+            <h3>C++</h3>
+            <p>ใช้แข่งขันเขียนโปรแกรมระดับภูมิภาคในฐานะตัวแทนวิทยาลัย</p>
+            <span class="skill__tag">Competitive</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="lang hw" data-tilt="6">
+            <span class="skill__logo"><img data-icon="Py" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt=""></span>
+            <h3>Python</h3>
+            <p>ภาษาแรกที่เขียนจริงจังตอน ม.3 ใช้สั่งงานบอร์ด micro:bit</p>
+            <span class="skill__tag">Smart Bedroom</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="lang web" data-tilt="6">
+            <span class="skill__logo"><img data-icon="JS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt=""></span>
+            <h3>JavaScript</h3>
+            <p>ศึกษาด้วยตนเอง เป็นพื้นฐานของเว็บแอปทั้งหมดที่ทำ</p>
+            <span class="skill__tag">Self-taught</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="web" data-tilt="6">
+            <span class="skill__logo"><img data-icon="Re" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt=""></span>
+            <h3>React</h3>
+            <p>ใช้สร้างส่วนหน้าของ eFootball Tournament Manager</p>
+            <span class="skill__tag">eFootball Manager</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="web" data-tilt="6">
+            <span class="skill__logo"><img data-icon="Tw" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt=""></span>
+            <h3>Tailwind CSS</h3>
+            <p>ออกแบบหน้าตาเว็บแอปให้สวยและตอบสนองทุกขนาดจอ</p>
+            <span class="skill__tag">eFootball Manager</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="web" data-tilt="6">
+            <span class="skill__logo"><img data-icon="H" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt=""></span>
+            <h3>HTML</h3>
+            <p>โครงสร้างของทุกหน้าเว็บ รวมถึงพอร์ตโฟลิโอนี้</p>
+            <span class="skill__tag">Self-taught</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="web" data-tilt="6">
+            <span class="skill__logo"><img data-icon="C" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""></span>
+            <h3>CSS</h3>
+            <p>จัดหน้า ใส่แอนิเมชัน และทำธีมสว่าง/มืด</p>
+            <span class="skill__tag">Self-taught</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="hw" data-tilt="6">
+            <span class="skill__logo skill__logo--photo"><img src="assets/img/microbit.jpg" alt=""></span>
+            <h3>micro:bit</h3>
+            <p>ควบคุมอุปกรณ์ไฟฟ้าในโครงงานห้องนอนอัจฉริยะ</p>
+            <span class="skill__tag">Hardware</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="lang" data-tilt="6">
+            <span class="skill__logo skill__logo--photo skill__logo--scratch"><img src="assets/img/scratch.jpg" alt=""></span>
+            <h3>Scratch</h3>
+            <p>ภาษาแรกในชีวิต เริ่มที่ห้องคอมพิวเตอร์ของโรงเรียน</p>
+            <span class="skill__tag">First love ♥</span>
+          </article>
+          <article class="card spot skill reveal" data-cat="biz" data-tilt="6">
+            <span class="skill__logo skill__logo--icon"><svg class="ic"><use href="#i-bag"/></svg></span>
+            <h3>Digital Business</h3>
+            <p>พื้นฐานจาก ปวช. เทคโนโลยีธุรกิจดิจิทัล เข้าใจโจทย์ฝั่งธุรกิจ</p>
+            <span class="skill__tag">ปวช.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 GRADES ===== -->
+    <section class="section" id="grades">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>06 — Academics</span>
+          <h2 class="section__title">ผลการเรียน</h2>
+          <p class="section__sub">คะแนนเฉลี่ย 4 ภาคเรียน ตามใบรับรองคะแนนผู้สมัคร TCAS มหาวิทยาลัยมหิดล ปีการศึกษา 2570</p>
+        </header>
+
+        <div class="grades">
+          <div class="card spot gpax reveal">
+            <div class="gpax__ring">
+              <svg viewBox="0 0 200 200" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gpaxGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#5b8cff"/>
+                    <stop offset="55%" stop-color="#38e1ff"/>
+                    <stop offset="100%" stop-color="#f0c35a"/>
+                  </linearGradient>
+                </defs>
+                <circle class="gpax__track" cx="100" cy="100" r="90"/>
+                <circle class="gpax__value" id="gpaxRing" cx="100" cy="100" r="90" data-value="3.66" data-max="4"/>
+              </svg>
+              <div class="gpax__num">
+                <b><span class="counter" data-to="3.66" data-decimals="2">0.00</span></b>
+                <small>/ 4.00</small>
+              </div>
+            </div>
+            <h3>GPAX</h3>
+            <p>คะแนนเฉลี่ยสะสม 4 ภาคเรียน</p>
+          </div>
+
+          <div class="card spot subjects reveal">
+            <h3>คะแนนเฉลี่ยรายกลุ่มสาระ</h3>
+            <div class="subject"><span>กลุ่มภาษาต่างประเทศ</span><b>4.00</b><div class="subject__bar"><i style="--w:100%;--bd:.1s"></i></div></div>
+            <div class="subject"><span>ภาษาอังกฤษ</span><b>4.00</b><div class="subject__bar"><i style="--w:100%;--bd:.2s"></i></div></div>
+            <div class="subject"><span>กลุ่มวิทยาศาสตร์</span><b>3.75</b><div class="subject__bar"><i style="--w:93.75%;--bd:.3s"></i></div></div>
+            <div class="subject"><span>กลุ่มคณิตศาสตร์</span><b>3.50</b><div class="subject__bar"><i style="--w:87.5%;--bd:.4s"></i></div></div>
+            <div class="subject"><span>กลุ่มภาษาไทย</span><b>3.33</b><div class="subject__bar"><i style="--w:83.25%;--bd:.5s"></i></div></div>
+            <div class="subject"><span>กลุ่มสังคมศึกษาฯ</span><b>3.33</b><div class="subject__bar"><i style="--w:83.25%;--bd:.6s"></i></div></div>
+            <div class="credits">
+              <span>วิทยาศาสตร์ <b>4</b> หน่วยกิต</span>
+              <span>คณิตศาสตร์ <b>4</b> หน่วยกิต</span>
+              <span>ภาษาอังกฤษ <b>6</b> หน่วยกิต</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 07 VISION ===== -->
+    <section class="section" id="vision">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>07 — Vision</span>
+          <h2 class="section__title">ทำไมต้อง <span class="grad-text">ICT มหิดล</span><br>และผมจะไปไหนต่อ</h2>
+        </header>
+
+        <p class="quote" id="quote">ทักษะที่เรียนรู้ด้วยตนเองจะต่อยอดไปสู่งานที่ซับซ้อนขึ้นได้ ก็ต่อเมื่อมีความเข้าใจเชิงหลักการรองรับอย่างเป็นระบบ</p>
+
+        <h3 class="sub-title reveal">รากฐานที่ผมตั้งใจมาเติมเต็ม</h3>
+        <div class="why">
+          <article class="card spot why__card reveal">
+            <span class="why__num">01</span>
+            <span class="card__icon"><svg class="ic"><use href="#i-tree"/></svg></span>
+            <h4>โครงสร้างข้อมูลและอัลกอริทึม</h4>
+            <p>หัวใจของการเขียนโปรแกรมให้ถูกต้องและมีประสิทธิภาพ</p>
+          </article>
+          <article class="card spot why__card reveal">
+            <span class="why__num">02</span>
+            <span class="card__icon"><svg class="ic"><use href="#i-layers"/></svg></span>
+            <h4>สถาปัตยกรรมซอฟต์แวร์</h4>
+            <p>ออกแบบระบบให้ขยายต่อได้ และดูแลรักษาได้ในระยะยาว</p>
+          </article>
+          <article class="card spot why__card reveal">
+            <span class="why__num">03</span>
+            <span class="card__icon"><svg class="ic"><use href="#i-db"/></svg></span>
+            <h4>การออกแบบระบบฐานข้อมูล</h4>
+            <p>จัดเก็บข้อมูลอย่างเป็นระบบ ถูกต้อง และเชื่อถือได้</p>
+          </article>
+        </div>
+
+        <p class="fit reveal">
+          หลักสูตร <strong>วิทยาการและเทคโนโลยีดิจิทัล</strong> ผสานองค์ความรู้ด้านวิทยาการคอมพิวเตอร์
+          เข้ากับการประยุกต์ใช้ในบริบทธุรกิจและสังคมดิจิทัล ซึ่งตรงกับพื้นฐานด้านเทคโนโลยีธุรกิจดิจิทัลที่ผมมีอยู่เดิมโดยตรง
+        </p>
+
+        <div class="formula reveal" aria-label="ความเข้าใจธุรกิจดิจิทัล บวก ทักษะการเขียนโปรแกรม เท่ากับ ซอฟต์แวร์ที่เป็นประโยชน์ต่อสังคมไทย">
+          <div class="formula__box"><svg class="ic"><use href="#i-bag"/></svg>ความเข้าใจ<br>ธุรกิจดิจิทัล</div>
+          <span class="formula__op">+</span>
+          <div class="formula__box"><svg class="ic"><use href="#i-code"/></svg>ทักษะการ<br>เขียนโปรแกรม</div>
+          <span class="formula__op">=</span>
+          <div class="formula__box formula__box--result"><svg class="ic"><use href="#i-rocket"/></svg>ซอฟต์แวร์ที่เป็นประโยชน์<br>ต่อสังคมไทย</div>
+        </div>
+
+        <h3 class="sub-title reveal">สิ่งที่ผมอยากสร้างในอนาคต</h3>
+        <p class="section__sub reveal">ซอฟต์แวร์สำหรับ <strong>ผู้ประกอบการรายย่อยและวิสาหกิจชุมชน</strong> กลุ่มที่มักเข้าไม่ถึงระบบสารสนเทศเพราะต้นทุนสูงเกินกำลัง</p>
+        <div class="future">
+          <article class="card spot future__card reveal">
+            <span class="card__icon"><svg class="ic"><use href="#i-box"/></svg></span>
+            <h4>ระบบจัดการสินค้าคงคลังและบันทึกยอดขาย</h4>
+            <p>ใช้งานง่าย ไม่ต้องมีความรู้ด้านไอทีก็ใช้ได้ ช่วยให้ร้านรู้ว่าอะไรขายดีและควรสั่งของเพิ่มเมื่อไร</p>
+          </article>
+          <article class="card spot future__card reveal">
+            <span class="card__icon"><svg class="ic"><use href="#i-users"/></svg></span>
+            <h4>ระบบสั่งซื้อออนไลน์ขนาดเล็ก</h4>
+            <p>ให้ร้านค้าท้องถิ่นรับออร์เดอร์ออนไลน์ได้เอง โดยไม่ต้องพึ่งแพลตฟอร์มราคาสูง</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 08 VIDEO ===== -->
+    <section class="section" id="video">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow" data-scramble>08 — Video</span>
+          <h2 class="section__title">วิดีโอ<span class="grad-text">แนะนำตัว</span></h2>
+          <p class="section__sub">ความยาว 2 นาที 23 วินาที</p>
+        </header>
+
+        <div class="card video reveal">
+          <video id="introVideo" preload="metadata" playsinline>
+            <source src="assets/video/intro.mp4#t=1" type="video/mp4">
+          </video>
+          <div class="video__overlay" id="videoOverlay">
+            <button type="button" class="video__play" id="videoPlay" aria-label="เล่นวิดีโอแนะนำตัว">
+              <svg class="ic ic--fill"><use href="#i-play"/></svg>
+            </button>
+            <p class="video__title">วิธวินท์ แก้วโหมดตาด<small>TCAS 2570 · ICT Mahidol</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/img/mu-logo.png" alt="" width="52" height="52">
+        <div>
+          <b>Witawin Kaewmodtad</b>
+          <small>Portfolio · TCAS 2570 · B.Sc. Digital Science and Technology, ICT Mahidol</small>
+        </div>
+      </div>
+      <p class="footer__egg">psst… ลองกด <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd></p>
+      <p class="footer__copy">© <span id="year">2569</span> วิธวินท์ แก้วโหมดตาด · สร้างด้วย HTML, CSS และ JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- ===== Floating UI ===== -->
+  <button type="button" class="to-top" id="toTop" aria-label="กลับไปด้านบน">
+    <svg class="to-top__ring" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/></svg>
+    <svg class="ic"><use href="#i-up"/></svg>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <canvas class="confetti" id="confetti" hidden aria-hidden="true"></canvas>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
